@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-6">
+  <h1 class="text-2xl font-bold mb-4">My Profile</h1>
+  <input id="skills" placeholder="Your Skills (comma separated)" class="border p-2 w-full mb-4"/>
+  <input id="wanted" placeholder="Skills Wanted" class="border p-2 w-full mb-4"/>
+  <input id="availability" placeholder="Availability (Weekends/Evenings)" class="border p-2 w-full mb-4"/>
+  <button onclick="saveProfile()" class="bg-blue-600 text-white px-4 py-2">Save</button>
+
+  <script>
+    function saveProfile() {
+      const data = {
+        skills: document.getElementById('skills').value,
+        wanted: document.getElementById('wanted').value,
+        availability: document.getElementById('availability').value,
+      };
+      localStorage.setItem('profile', JSON.stringify(data));
+      alert('Profile saved!');
+    }
+  </script>
+</body>
+</html>
